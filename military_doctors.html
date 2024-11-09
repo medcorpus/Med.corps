@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Военоврачи 1-го ранга</title>
+    <link rel="stylesheet" href="/static/style mobile.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        /* Основной стиль */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #AF1740, #457b9d);
+            color: #f1faee;
+        }
+
+        /* Анимация плавного появления */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Анимация для заголовков и карточек */
+        .header, .footer, h1, h2 {
+            animation: fadeIn 1s ease-out;
+        }
+        .card {
+            animation: fadeIn 0.8s ease-out;
+            animation-delay: 0.2s; /* небольшая задержка для последовательного появления карточек */
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #ffffff;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-list li {
+            margin: 0 15px;
+        }
+
+        .nav-list a {
+            color: #36C2CE;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover {
+            color: white;
+        }
+
+        .achievement-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            overflow-x: auto;
+        }
+
+        /* Стили для карточек бойцов */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 200px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: inline-block;
+            color: #f1faee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Увеличивает карточку при наведении */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Добавляет тень */
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Таблица */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #fff;
+            padding: 10px;
+            text-align: left;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        tr:hover td {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #000000;
+            color: #f1faee;
+            font-size: 14px;
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Военоврачи 1-го ранга</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Главная страница</a></li>
+                <li><a href="main_info.html">Основная информация</a></li>
+                <li><a href="awards.html">Награды</a></li>
+                <li><a href="documentation.html">Документация</a></li>
+                <li><a href="upgrade_system.html">Система повышения</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section class="info">
+        <h2 style="text-align: center; color: #f1faee;">Военоврачи 1-го ранга (до вайпа)</h2>
+        <div class="container">
+            <!-- Карточки бойцов -->
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>Raide</h3>
+                <p>Номер: 3030</p>
+                <p>Срок правления: 5 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>Seven</h3>
+                <p>Номер: 00007</p>
+                <p>Срок правления: 2 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>dellXist</h3>
+                <p>Номер: 3781</p>
+                <p>Срок правления: 2 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>NeGaT1Ve</h3>
+                <p>Номер: 7115</p>
+                <p>Срок правления: 2 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>Lord Cubick</h3>
+                <p>Номер: 00300</p>
+                <p>Срок правления: 2 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>NanoReal</h3>
+                <p>Номер: 26500</p>
+                <p>Срок правления: 1 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>kridens</h3>
+                <p>Номер: 25124</p>
+                <p>Срок правления: 1 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>Molly</h3>
+                <p>Номер: 9004</p>
+                <p>Срок правления: 6 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>ZloDiaN</h3>
+                <p>Номер: 4931</p>
+                <p>Срок правления: 2.5 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>Острый</h3>
+                <p>Номер: 32678</p>
+                <p>Срок правления: 5 дней</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>ПОРОШОК</h3>
+                <p>Номер: 36206</p>
+                <p>Срок правления: 5 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>MrLUCIFER</h3>
+                <p>Номер: 57286</p>
+                <p>Срок правления: 3 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>Robert Koks</h3>
+                <p>Номер: 1255</p>
+                <p>Срок правления: 15 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>Миклуха</h3>
+                <p>Номер: 20870</p>
+                <p>Срок правления: 5 месяцев</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>Коуди</h3>
+                <p>Номер: 09398</p>
+                <p>Срок правления: 3 месяцев</p>
+            </div>
+        </div>
+
+        <!-- Новый заголовок по центру -->
+        <h2 style="text-align: center; color: #f1faee;">Военоврачи 1-го ранга (после вайпа)</h2>
+
+        <div class="container">
+            <!-- Карточки бойцов после вайпа -->
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>Mafin</h3>
+                <p>Номер: 0267</p>
+                <p>Срок правления: 1 месяц</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>RenndyOne</h3>
+                <p>Номер: 0638</p>
+                <p>Срок правления: Настоящие время</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3>Fruity duck(ВРИО)</h3>
+                <p>Номер: 1352 </p>
+                <p>Срок правления: 15 дней</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/ВВ1.png" alt="Фото бойца">
+                <h3> krevetka(ВРИО)</h3>
+                <p>Номер: 0917</p>
+                <p>Срок правления: 20 дней</p>
+            </div>
+            <!-- Добавьте дополнительные карточки по необходимости -->
+        </div>
+    </section>
+
+    <footer>
+        <p>@Собственность Медицинского корпуса
+            Любое использование, либо копирование материалов сайта допускается лишь с разрешения действующего военврачебного состава медицинского корпуса.</p>
+    </footer>
+</body>
+</html>

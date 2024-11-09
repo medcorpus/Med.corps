@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="/static/style mobile.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        /* Основной фон страницы */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #AF1740, #457b9d);
+            color: #f1faee;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Анимация плавного появления */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Анимация масштабирования для модального окна */
+        @keyframes scaleUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Заголовок и навигация */
+        .header, .info, .footer, .quote {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #f1faee;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        /* Навигационное меню */
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-list li {
+            margin: 0 15px;
+        }
+
+        .nav-list a {
+            color: #36C2CE;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover {
+            color: #f1faee;
+        }
+
+        /* Информационный блок */
+        .info {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 255, 255, 0.6);
+            margin: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .info p {
+            margin: 10px 0;
+        }
+
+        /* Стиль для цитаты */
+        .quote {
+            font-style: italic;
+            color: #00ffff;
+            background-color: rgba(0, 255, 255, 0.2);
+            border-left: 4px solid #00ffff;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            animation: fadeIn 1.4s ease-out;
+        }
+
+        /* Стили для секций-квадратов */
+        .positions-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .position-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            flex: 1 1 250px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), inset 0 0 10px rgba(0, 255, 255, 0.6);
+            border: 2px solid rgba(0, 255, 255, 0.6);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            animation: fadeIn 1.6s ease-out;
+        }
+
+        .position-box h3 {
+            color: rgb(0, 255, 255);
+            font-size: 1.2rem;
+        }
+
+        /* Эффект при наведении */
+        .position-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 1), inset 0 0 15px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            max-width: 400px;
+            width: 80%;
+            text-align: center;
+            border: 2px solid rgba(0, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            animation: scaleUp 0.4s ease-out;
+        }
+
+        .close-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        /* Футер */
+        .footer {
+            background-color: #111;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+            border-top: 1px solid rgba(0, 255, 255, 0.6);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .large-font {
+                font-size: 1.2rem;
+            }
+            .position-box {
+                flex: 1 1 100%;
+            }
+            .modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Добро пожаловать в Мед Корпус!</h1>
+        <p>Мы оказываем профессиональную медицинскую помощь всем жителям галактики.</p>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="main_info.html">Основная информация</a></li>
+                <li><a href="upgrade_system.html">Система повышения</a></li>
+                <li><a href="awards.html">Награды</a></li>
+                <li><a href="documentation.html">Документация</a></li>
+                <li><a href="military_doctors.html">Военоврачи 1-го ранга</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="info">
+        <h2>Информация о сайте</h2>
+        <p class="large-font">Сайт был создан для упрощения процесса повышения званий в медицинском корпусе. Здесь вы можете найти все необходимые критерии, информацию о наградах и доступ к документации.</p>
+        <p class="large-font">Пользуйтесь навигацией вверху, чтобы быстро переходить между разделами. Мы стремимся сделать вашу работу более удобной и эффективной.</p>
+        <p class="large-font">Если у вас есть вопросы или предложения, не стесняйтесь обращаться к Военврачебному составу.</p>
+        <blockquote class="quote">"Искусство врачевания не только в том, чтобы вылечить тело, но и душу." — Падме Амидала</blockquote>
+    </section>
+
+    <section class="duty-positions">
+        <h2>Действующий ВВ состав:</h2>
+        <div class="positions-container">
+            <div class="position-box" onclick="openModal('Военврач 1-го ранга', 'Номер: 0638', 'Имя: RenndyOne', 'Начал играть с 2017 года, стоял на КМ 212 около полугода после чего снялся из-за разборок с Модроном, после перешел на 2 бз, где был в стаке МК на ВВ3, создал МК и ливнул с проекта. После несколько раз еще возвращался на проект, но все равно уходил. В один прекрасный апрельский день ему написал Dex с предложением вернуться на сервер после вайпа в КМД состав МК.')">
+                <h3>Военврач 1-го ранга</h3>
+                <p>Номер: 0638</p>
+                <p>Имя: RenndyOne</p>
+            </div>
+            <div class="position-box" onclick="openModal('Военврач 2-го ранга', 'Номер: 1941', 'Имя: BarsLan', 'Начал играть с 2024 года, практически сразу вступил в ряды МК и начал проявлять свои навыки и смекалку. Очень быстро стал продвигаться по карьерной лестнице и встал на КМД должность.')">
+                <h3>Военврач 2-го ранга</h3>
+                <p>Номер: 1941</p>
+                <p>Имя: BarsLan</p>
+            </div>
+            <div class="position-box" onclick="openModal('Военврач 3-го ранга', 'Номер: 0917', 'Имя: krevetka', 'это женщина, на этом все сказано.')">
+                <h3>Военврач 3-го ранга</h3>
+                <p>Номер: 0917</p>
+                <p>Имя: krevetka</p>
+            </div>
+            <div class="position-box" onclick="openModal('Главврач', 'Номер: 0145', 'Имя: NekoPes', 'Начал в 2020 году, высоко не поднялся, был РПК 212 около года, забросил БЗ из-зав потери аккаунта. В 2022 вернулся на 1 БЗ, двинул в МК, параллельно 1 БЗ бегал на 2,  выше интерна не поднялся на 1, ушел с ЧСом в гвардию. На гвардейце посидел месяц, сняли, перешёл в тренера. В наёмниках нашел себя и совмещал их с 41 на 2 В данный момент поражен своими навыками в медицине и нахождением на командирском звании.  ')">
+                <h3>Главврач</h3>
+                <p>Номер: 0145</p>
+                <p>Имя: NekoPes</p>
+            </div>
+        </section>
+    
+        <section class="duty-positions">
+            <h2>Действующие должностные лица:</h2>
+            <div class="positions-container">
+                <div class="position-box" onclick="openModal('Начальник интендантов', 'Номер: 6215', 'Имя: kavaIIKE', 'Опытный начальник интендантов.')">
+                    <h3>Начальник интендантов</h3>
+                    <p>Номер: 6215</p>
+                    <p>Имя: kavaIIKE</p>
+                </div>
+                <div class="position-box" onclick="openModal('Зам. начальника интендантов', 'Номер: -', 'Имя: --', 'Помощник начальника интендантов.')">
+                    <h3>Зам. начальника интендантов</h3>
+                    <p>Номер: 1044</p>
+                    <p>Имя: Iatneh</p>
+                </div>
+                <div class="position-box" onclick="openModal('Начальник комендантов', 'Номер: 6215', 'Имя: kavaIIKE', 'Комендант с большим опытом.')">
+                    <h3>Начальник комендантов</h3>
+                    <p>Номер: 6215</p>
+                    <p>Имя: kavaIIKE</p>
+                </div>
+                <div class="position-box" onclick="openModal('Зам. начальника комендантов', 'Номер: --', 'Имя: -', 'Нет информации о заме.')">
+                    <h3>Зам. начальника комендантов</h3>
+                    <p>Номер: -</p>
+                    <p>Имя: --</p>
+                </div>
+            </div>
+        </section>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-number"></p>
+            <p id="modal-name"></p>
+            <p id="modal-info"></p>
+            <button class="close-button" onclick="closeModal()">Закрыть</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>@Собственность Медицинского корпуса
+            Любое использование, либо копирование материалов сайта допускается лишь с разрешения действующего военврачебного состава медицинского корпуса.</p>
+    </footer>
+
+    <script>
+        function openModal(title, number, name, info) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-number').innerText = number;
+            document.getElementById('modal-name').innerText = name;
+            document.getElementById('modal-info').innerText = info;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основная информация - Медицинский Корпус</title>
+    <link rel="stylesheet" href="/static/style mobile.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        /* Основной фон страницы */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #AF1740, #457b9d);
+            color: #f1faee;
+        }
+
+        /* Анимация для плавного появления */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Анимация заголовка и навигации */
+        .header h1 {
+            font-size: 3rem;
+            color: #f1faee;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Анимация пунктов меню */
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-list li {
+            margin: 0 15px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .nav-list a {
+            color: #36C2CE;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        /* Анимация для секций */
+        .section-container {
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        /* Анимация для элементов списка обязанностей */
+        .info-list li {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            padding-left: 10px;
+            position: relative;
+            margin-bottom: 10px;
+            animation: fadeIn 1.8s ease;
+        }
+
+        /* Стиль для точек перед элементами списка */
+        .info-list li::before {
+            content: "•";
+            color: #36C2CE;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Прочие стили */
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .info {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .section-container h3 {
+            color: #36C2CE;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-container p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .note {
+            font-size: 1rem;
+            color: #f1faee;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #030303;
+            color: #f1faee;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Основная информация - Медицинский Корпус</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Главная страница</a></li>
+                <li><a href="upgrade_system.html">Система повышения</a></li>
+                <li><a href="documentation.html">Документация</a></li>
+                <li><a href="military_doctors.html">Военврачи 1-го ранга</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="info">
+        <h2>Основная информация</h2>
+        
+        <section class="section-container">
+            <h3>Описание Медицинского Корпуса</h3>
+            <p>Медицинский корпус — подразделение Великой Армии Республики (ВАР). Отвечает за оказание медицинской помощи, обследование и лечение раненых, а также за поддержку войск во время боевых действий.</p>
+            <p>Приказ от имени медицинского корпуса — обязательный к исполнению бойцами Великой Армии Республики приказ, действующий на любом военном объекте Республики и прилегающих к ним территориях. Боец, отдающий приказ от имени мед. корпуса, должен иметь указанную ниже причину, которую необходимо огласить бойцу.</p>
+        </section>
+
+        <section class="section-container">
+            <h3>Медицинская карта</h3>
+            <p>Медицинская карта — медицинский документ, в котором бойцами мед. корпуса ведется краткое описание состояния бойца. Медицинская карта действительна в течение шести месяцев с момента выдачи и может быть получена только после прохождения медицинского осмотра.</p>
+        </section>
+
+        <section class="section-container">
+            <h3>Врачебная тайна</h3>
+            <p>Врачебная тайна — запрет медицинскому работнику сообщать третьим лицам информацию о состоянии здоровья пациента, диагнозе, результатах обследования, факте обращения за медицинской помощью и сведения о личной жизни пациента, полученные в ходе медицинского обслуживания. Запрет распространяется также на всех лиц, которым эта информация стала известна в предусмотренных случаях уставом и внутренними регламентами.</p>
+            <p><strong>Примечание:</strong> Оглашение результатов Военно-врачебной экспертизы не является врачебной тайной.</p>
+        </section>
+
+        <section class="section-container">
+            <h3>Обязанности бойца Медицинского Корпуса</h3>
+            <ul class="info-list">
+                <li>Реагировать на сообщения о раненых или необходимости медика;</li>
+                <li>Соблюдать устав В.А.Р, общие правила базы и регламенты мед. корпуса;</li>
+                <li>Предотвращать ситуации, угрожающие жизням клонов;</li>
+                <li>Огласить причину в случае приказа от имени медицинского корпуса;</li>
+                <li>Хранить врачебную тайну;</li>
+                <li>Чтить командование и выполнять приказы старших по званию, сомнения строго наказуемы;</li>
+                <li>Избегать самовольного снятия бойца без согласования с Военврачом 1-го ранга.</li>
+            </ul>
+        </section>
+
+        <section class="section-container">
+            <h3>Права бойца Медицинского Корпуса</h3>
+            <ul class="info-list">
+                <li>Задерживать клонов при подозрении в дефектности или угрозе безопасности;</li>
+                <li>Отдавать приказы от имени медицинского корпуса;</li>
+                <li>Просить помощь других подразделений при необходимости;</li>
+                <li>Отстранять от обязанностей клонов с травмами или дефектами;</li>
+                <li>Игнорировать приказы других подразделений при исполнении обязанностей;</li>
+                <li>Проходить на любую территорию базы для выполнения своих обязанностей;</li>
+                <li>Нарушать ТБ для лечения бойца, если это необходимо.</li>
+            </ul>
+            <p class="note"><strong>Примечание:</strong> За злоупотребление правами следует наказание в виде срока в дисциплинарном батальоне и черный список медицинского корпуса.</p>
+        </section>
+    </div>
+
+    <footer>
+        @Собственность Медицинского корпуса
+Любое использование, либо копирование материалов сайта допускается лишь с разрешения действующего военврачебного состава медицинского корпуса.
+    </footer>
+</body>
+</html>
