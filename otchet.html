@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Формуляры Рапортования</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #AF1740, #457b9d);
+            color: #f1faee;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .form-list {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .form-card {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 
+                        inset 0 0 10px rgba(0, 255, 255, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .form-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 1), 
+                        inset 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .form-card a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .form-card a:hover {
+            background: rgba(255, 255, 255, 0.7);
+            color: black;
+        }
+
+        .footer-text {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Заголовок -->
+    <header class="header">
+        <h1>Формуляры Рапортования</h1>
+    </header>
+
+    <!-- Список форм -->
+    <main>
+        <div class="form-list">
+            <div class="form-card" style="background-image: url('https://via.placeholder.com/300x200');">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxKaMEmxxMqS1sJDE0tpEdiCBPwXZ7E7S5fvoYxe3mLr7b8w/viewform" target="_blank">
+                    Форма запроса на Отпуск
+                </a>
+            </div>
+            <div class="form-card" style="background-image: url('https://via.placeholder.com/300x200');">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSczK8dSZf9V99xw9-LOhVuGVJBNR3nacq46bTym8V7huv_u1g/viewform" target="_blank">
+                    Форма отчетов Взысканий
+                </a>
+            </div>
+            <div class="form-card" style="background-image: url('https://via.placeholder.com/300x200');">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScKEKQeNkis_jh1QrHcEP1KxtsCBup3FDHLAyeQWHRv6C-RVw/viewform" target="_blank">
+                    Форма отчетов Мед.Карт
+                </a>
+            </div>
+            <div class="form-card" style="background-image: url('https://via.placeholder.com/300x200');">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAmig6N6l74tn2oB7zYvsruuMiJN2R6G0hsdmcU52CylA-Lw/viewform" target="_blank">
+                    Форма отчетов Дежурства
+                </a>
+            </div>
+            <div class="form-card" style="background-image: url('https://via.placeholder.com/300x200');">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgul26tVM08jjFOHEoe5EGl2Ux6ztLd4lTyC7EThgl40unAg/viewform" target="_blank">
+                    Форма отчетов Мед.Деятельности
+                </a>
+            </div>
+            <div class="form-card" style="background-image: url('https://docs.google.com/forms/d/e/1FAIpQLSdVxZkv6bYYrXXeqoUIg2IgWkaN1uGLrocE_mpCRlh9IdCuww/viewform/300x200');">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVxZkv6bYYrXXeqoUIg2IgWkaN1uGLrocE_mpCRlh9IdCuww/viewform" target="_blank">
+                    Форма отчетов Тренировок
+                </a>
+            </div>
+            <div class="form-card" style="background-image: url('https://via.placeholder.com/300x200');">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeh0cTV9iMFDHft10itNJFjF7yEK6TKQOszk0oMukXdalanbg/viewform" target="_blank">
+                    Форма отчетов Спец.Операций
+                </a>
+            </div>
+            <div class="form-card" style="background-image: url('https://via.placeholder.com/300x200');">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScspE50ZX6755ClaJZnW2_ppX1-EF8nWUbd4uP_iPJnE5Q4jQ/viewform" target="_blank">
+                    Форма отчетов Лекций/Зачетов/Практик
+                </a>
+            </div>
+            <div class="form-card" style="background-image: url('https://via.placeholder.com/300x200');">
+                <a href="https://discordapp.com/channels/1223559161846042694/1225727334301171724/1290737174236364801" target="_blank">
+                    Форма Предложений
+                </a>
+            </div>
+            <div class="form-card" style="background-image: url('https://via.placeholder.com/300x200');">
+                <a href="https://discordapp.com/channels/1223559161846042694/1225855483341045841/1290737806393606185" target="_blank">
+                    Форма Рекомендаций
+                </a>
+            </div>
+            <div class="form-card" style="background-image: url('https://via.placeholder.com/300x200');">
+                <a href="https://discordapp.com/channels/1223559161846042694/1296934640371634176/1296935485356113993" target="_blank">
+                    Форма запроса Ачивок
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer-text">
+        <p>&copy; 2024 Рапортование в штаб. Все права защищены.</p>
+    </footer>
+</body>
+</html>
