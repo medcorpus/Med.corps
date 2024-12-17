@@ -192,3 +192,51 @@ img {
         width: 100%;
     }
 }
+.legend-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 250px;
+    height: 400px;
+    margin: 15px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    overflow: hidden; /* Скрываем всё выходящее за границы карточки */
+}
+
+.legend-img {
+    width: 100%; /* Растягиваем изображение на ширину карточки */
+    height: 250px; /* Фиксированная высота изображения */
+    object-fit: cover; /* Заполняем контейнер, обрезая лишнее */
+    object-position: top; /* Центрирование изображения по верхней части */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #000; /* Дополнительный фон */
+}
+
+.legend-info {
+    padding: 10px;
+    text-align: center;
+    color: #a8dadc;
+}
+
+.legend-details {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: #f1faee;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: bottom 0.5s ease;
+}
+
+.legend-card.active .legend-details {
+    bottom: 0;
+}
