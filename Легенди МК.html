@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Легенды МК</title>
+    <link rel="stylesheet" href="static/style mobile.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        /* Дополнительный стиль для карточек легенд */
+        .legends-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .legend-card {
+            position: relative;
+            width: 250px;
+            height: 350px;
+            margin: 15px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .legend-card:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .legend-card.active {
+            transform: scale(1.1); /* Анимация приближения */
+            z-index: 10;
+        }
+
+        /* Исправление для изображений */
+        .legend-img {
+            width: 100%; /* Заполнение ширины карточки */
+            height: 60%; /* Фиксированная высота */
+            object-fit: cover; /* Изображение заполняет контейнер */
+            object-position: top; /* Центрируем верхнюю часть изображения */
+            border-top-left-radius: 10px; /* Скругление углов сверху */
+            border-top-right-radius: 10px;
+        }
+
+        .legend-info {
+            padding: 10px;
+            text-align: center;
+            color: #a8dadc;
+        }
+
+        .legend-details {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: #f1faee;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: bottom 0.5s ease;
+        }
+
+        .legend-card.active .legend-details {
+            bottom: 0;
+        }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Легенды Медицинского Корпуса</h1>
+    </header>
+    <header class="header">
+        <h1>Легенды МК</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Главная страница</a></li>
+                <li><a href="main_info.html">Основная информация</a></li>
+                <li><a href="awards.html">Награды</a></li>
+                <li><a href="upgrade_system.html">Система повышения</a></li>
+                <li><a href="documentation.html">Документация</a></li>
+                <li><a href="military_doctors.html">Военврачи 1-го ранга</a></li>
+            </ul>
+        </nav>
+    </header>
+</head>
+<body>
+    <section class="info">
+        <div class="legends-container">
+            <!-- Карточка игрока -->
+            <div class="legend-card" onclick="toggleLegend(this)">
+                <img src="static/images/ВВ1.png" alt="Легенда 2" class="legend-img">
+                <div class="legend-info">
+                    <h3>Позывной: Mafin</h3>
+                    <p>Звание: Военврач 1-го ранга</p>
+                </div>
+                <div class="legend-details">
+                    <p>Получено за поднятие мед корпуса после Вали</p>
+                    <p>Дата: 18.05.2024</p>
+                </div>
+            </div>
+
+            <div class="legend-card" onclick="toggleLegend(this)">
+                <img src="static/images/Хирург.png" alt="Легенда 1" class="legend-img">
+                <div class="legend-info">
+                    <h3>Позывной: Кратос</h3>
+                    <p>Звание: Хирург</p>
+                </div>
+                <div class="legend-details">
+                    <p>Получено за успешное руководство спецоперацией.</p>
+                    <p>Дата: 25.06.2024</p>
+                </div>
+            </div>
+
+            <div class="legend-card" onclick="toggleLegend(this)">
+                <img src="static/images/ВВ1.png" alt="Легенда 1" class="legend-img">
+                <div class="legend-info">
+                    <h3>Позывной: RenndyOne</h3>
+                    <p>Звание: Военврач 1-го ранга</p>
+                </div>
+                <div class="legend-details">
+                    <p>Получено за заслуги перед Медицинским Корпусом. 🐘</p>
+                    <p>Дата: 16.12.2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer-text">
+            <span style="font-weight: bold; color: #00ffff;">@Собственность Медицинского корпуса</span><br>
+            <span style="font-size: 1.1rem; line-height: 1.5; color: #f1faee;">Любое использование или копирование материалов сайта допускается<br>лишь с разрешения действующего военврачебного состава медицинского корпуса.</span>
+        </p>
+    </footer>
+
+    <script>
+        // Функция для анимации карточки
+        function toggleLegend(card) {
+            const cards = document.querySelectorAll('.legend-card');
+            cards.forEach(c => {
+                if (c !== card) {
+                    c.classList.remove('active'); // Снимаем активное состояние с других карточек
+                }
+            });
+            card.classList.toggle('active'); // Включаем анимацию
+        }
+    </script>
+</body>
+</html>
